@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 require('dotenv').config();
-const port = 5000;
+const port = process.env.port || 5000;
 
 const username = process.env.DB_USER;
 const password = process.env.DB_PASS;
