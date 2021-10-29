@@ -27,6 +27,12 @@ async function run() {
             console.log(service);
         })
 
+        app.get('/services', async (req, res) => {
+            const cursor = await collection.find({});
+            const result = await cursor.toArray();
+            res.json(result);
+        })
+
     } finally {
         // await client.close();
     }
